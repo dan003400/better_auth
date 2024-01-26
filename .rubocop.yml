@@ -1,0 +1,41 @@
+AllCops:
+  AutoCorrect: true
+  NewCops: disable
+  Exclude:
+    - "bin/{bundle,setup,spring,rails,rake}"
+
+Layout/LineLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+Style/FloatDivision:
+  Enabled: false

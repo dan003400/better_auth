@@ -1,0 +1,26 @@
+<div>
+  <div>
+    <h2>Enter your email to get started</h2>
+    <h4>If you are here for the first time, enter your email to get started, if
+      not, welcome back!</h4>
+  </div>
+
+  <div>
+    <div>
+      <%= form_with url: create_session_path, scope: :session do |f| %>
+        <div>
+          <label for="email">E-mail</label>
+          <div>
+            <%= f.text_field :email,
+            required: true,
+            placeholder: "Email" %>
+          </div>
+        </div>
+
+        <div>
+          <%= f.submit "Request Magic Link" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
