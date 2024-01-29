@@ -2,7 +2,11 @@
 
 require_relative 'better_auth/version'
 
+require 'omniauth-google-oauth2'
+
 require 'better_auth/configuration'
+require 'better_auth/helpers/authentication_helper'
+require 'better_auth/routing'
 require 'better_auth/engine'
 require 'better_auth/current'
 

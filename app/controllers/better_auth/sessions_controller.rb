@@ -2,8 +2,8 @@
 
 module BetterAuth
   class SessionsController < ApplicationController
-    skip_before_action :protect
-    before_action :ensure_not_authenticated, except: :destroy
+    skip_before_action :protect!
+    before_action :ensure_not_authenticated!, except: :destroy
 
     def new; end
 
@@ -52,10 +52,6 @@ module BetterAuth
 
     def session_params
       params.require(:session).permit(:email)
-    end
-
-    def ensure_not_authenticated
-      redirect_to BetterAuth.configuration.after_sign_in_path if BetterAuth::Current.user.present?
     end
   end
 end

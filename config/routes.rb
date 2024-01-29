@@ -11,6 +11,8 @@ BetterAuth::Engine.routes.draw do
   post '/destroy', to: 'sessions#destroy', as: 'destroy_session'
 
   ## Omniauth
-  # get '/auth/:provider/callback', to: 'better_auth/sessions#oauth'
-  # get '/auth/failure', to: redirect('new')
+  if BetterAuth.configuration.google_client_id && BetterAuth.configuration.google_client_secret
+    get '/oauth/:provider/callback', to: 'sessions#oauth', as: 'oauth_callback'
+    get '/oauth/failure', to: redirect('new'), as: 'oauth_failure'
+  end
 end
