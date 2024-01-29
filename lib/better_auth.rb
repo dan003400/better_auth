@@ -2,6 +2,8 @@
 
 require_relative 'better_auth/version'
 
+require 'active_support/core_ext/string/inflections'
+
 require 'omniauth-google-oauth2'
 
 require 'better_auth/configuration'

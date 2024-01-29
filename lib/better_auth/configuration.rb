@@ -6,6 +6,8 @@ module BetterAuth
 
     def initialize
       @user_class = 'User'
+      @mount_path_proc = -> { '/auth' }
+
       @mailer_from = 'no-reply@example.com'
 
       @after_sign_in_path = '/'
