@@ -7,14 +7,20 @@ module BetterAuth
         BetterAuth::Current.user
       end
 
+      def user_signed_in?
+        BetterAuth::Current.user.present?
+      end
+
       def protect!
         authenticate
 
-        redirect_to better_auth.new_session_path, error: 'Authentication is required, please login.' unless current_user.present?
+        redirect_to better_auth.new_session_path, error: 'Authentication is required, please login.' unless user_signed_in?
       end
 
       def ensure_not_authenticated!
-        redirect_to BetterAuth.configuration.after_sign_in_path if current_user.present?
+        authenticate
+
+        redirect_to BetterAuth.configuration.after_sign_in_path if user_signed_in?
       end
 
       private
